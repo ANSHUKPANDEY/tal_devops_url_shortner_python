@@ -74,7 +74,7 @@ def create_short_url(url_request: schemas.URLBase, db: Session = Depends(get_db)
     db.refresh(db_url)
 
     # Generate QR code
-    qr_code = generate_qr_code(f"http://localhost:8000/{short_id}")
+    qr_code = generate_qr_code(f"http://backend:8000/{short_id}")
 
     return {
         "target_url": url_request.target_url,
